@@ -10,7 +10,7 @@ export const HeroSection = () => {
                     <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2"> Nguyen</span>
                 </h1>
                 <p>
-                    I am an aspiring software developer with a passion for creating stellar innovative solutions and learning new technologies.
+                    I am an aspiring software engineer at the University of Florida with a passion for creating stellar innovative solutions and learning new technologies.
                 </p>
 
                 <div className="pt-4 opacity-0 animate-fade-in-delay-4">
