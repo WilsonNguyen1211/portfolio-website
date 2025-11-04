@@ -1,4 +1,4 @@
-
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
 
 
 const projects = [
@@ -6,10 +6,20 @@ const projects = [
         id: 1,
         title: "RateMyPrUFessor Landing Page",
         description: "A landing page app for a google extension using HTML, CSS, and JavaScript.",
-        image: "#",
+        image: "/projects/project1.png",
         tags: ["HTML", "CSS", "JavaScript"],
+        demoUrl: "https://wilsonnguyen1211.github.io/Rate-My-PrUFessors-Landing-Page/",
+        githubUrl: "https://github.com/WilsonNguyen1211/Rate-My-PrUFessors-Landing-Page",
+    },
+    {
+
+        id: 2,
+        title: "Draura",
+        description: "Driving simulator powered by multimodal AI agents that analyzes and adapts to live map data to generate dynamic questions making practice more challening and engaging.",
+        image: "/projects/project2.png",
+        tags: ["Three.js", "TypeScript", "Python"],
         demoUrl: "#",
-        githubUrl: "#",
+        githubUrl: "https://github.com/shawnjuqi/dura-shellhacks",
     }
 ]
 
@@ -23,6 +33,43 @@ export const ProjectsSection = () => {
                 Here are some of my recent projects. Each project was carefully
                 crafted with attention to detail and user experience.
             </p>
+            <div className="grid grid-cols: 1 md:grid-cols-2 lg: grid-cols-3 gap-8">
+                {projects.map((project, key) => (
+                    <div key={key} className="group bg-card rounded-lg shadow-xs card-hover">
+                        <div className="h-48 overflow-hidden"> 
+                            <img src={project.image} alt ={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover-110"/>
+                        </div>
+
+                        <div className="p-6">
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {project.tags.map((tag) => (
+                                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/20 text-secondary-foreground">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        
+                            <h3 className="text-xl font-semibold mb-2"> {project.title} </h3>
+                            <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                            <div className="flex justify center-between items-center">
+                                <div className="flex space-x-3"> 
+                                    <a href={project.demoUrl} target="_blank" className="text-foreground hover:text-primary transition-colors duration-300">
+                                        <ExternalLink size={20}/>
+                                    </a>
+                                    <a href={project.githubUrl} target="_blank" className="text-foreground hover:text-primary transition-colors duration-300">
+                                        <Github size={20}/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <div className="text-center mt-12">
+                <a className="cosmic-button w-fit flex items-center mx-auto gap-2" target="_blank" href="https://github.com/WilsonNguyen1211">
+                    Check My Github <ArrowRight size={16} />
+                </a>
+            </div>
         </div>
 
     </section>
